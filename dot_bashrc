@@ -1,4 +1,4 @@
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(/usr/local/bin/brew shellenv)"
 eval "$(starship init bash)"
 eval "$(fzf --bash)"
 
@@ -10,4 +10,4 @@ export AWS_CA_BUNDLE=$HOME/.aws/rootca.crt
 alias k="kubectl"
 alias kc="kubectx"
 alias kn="kubens"
-
+alias c="chezmoi"
