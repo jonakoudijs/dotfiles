@@ -5,6 +5,7 @@ eval "$(fzf --bash)"
 ## settings
 export LANG=en_US.UTF-8
 export AWS_CA_BUNDLE=$HOME/.aws/rootca.crt
+export HOMEBREW_BUNDLE_FILE=~/.brewfile
 
 ## aliases
 alias k="kubectl"
