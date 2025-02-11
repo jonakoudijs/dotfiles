@@ -1,4 +1,10 @@
-eval "$(/usr/local/bin/brew shellenv)"
+## init Homebrew / depends on architecture
+if [ -f /usr/local/bin/brew ]; then
+  eval "$(/usr/local/bin/brew shellenv)"
+elif [ -f /opt/homebrew/bin/brew ]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+fi
+
 eval "$(starship init bash)"
 eval "$(fzf --bash)"
 
