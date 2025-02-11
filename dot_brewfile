@@ -1,6 +1,5 @@
 ## brew taps
 
-
 ## brew casks
 cask "font-fira-code-nerd-font"
 cask "iterm2"
