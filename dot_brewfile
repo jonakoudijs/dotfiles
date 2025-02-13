@@ -64,3 +64,4 @@ brew "yq"
 
 ## app store
 mas "Theine", id: 955848755
+mas "Notion Web Clipper", id: 1559269364
