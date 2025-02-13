@@ -32,6 +32,7 @@ brew "kubectx"
 brew "kubernetes-cli"
 brew "kubeseal"
 brew "lazygit"
+brew "mas"
 brew "minikube"
 brew "mysql-client"
 brew "nmap"
@@ -60,3 +61,6 @@ brew "webp"
 brew "wget"
 brew "xz"
 brew "yq"
+
+## app store
+mas "Theine", id: 955848755
