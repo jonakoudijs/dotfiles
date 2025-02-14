@@ -115,6 +115,7 @@
         - "git add ."
         - "git commit -m \"Auto push changes\""
         - "git push"
+      when: git_status.stdout_lines | length > 0
       tags:
         - git
         - git-push
