@@ -14,6 +14,7 @@ export AWS_CA_BUNDLE=$HOME/.aws/rootca.crt
 export HOMEBREW_BUNDLE_FILE=~/.brewfile
 
 ## aliases
+alias setup="ANSIBLE_LOCALHOST_WARNING="false" ANSIBLE_INVENTORY_UNPARSED_WARNING="false" ansible-playbook $HOME/.dotfiles/playbook.yaml"
 alias k="kubectl"
 alias kc="kubectx"
 alias kn="kubens"

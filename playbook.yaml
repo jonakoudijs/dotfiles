@@ -1,0 +1,155 @@
+---
+- name: Setup MacOS Development Environment
+  hosts: localhost
+  connection: local
+  ignore_errors: true
+
+  pre_tasks:
+    - name: Check git status
+      ansible.builtin.command: git status --porcelain
+      args:
+        chdir: "{{ playbook_dir }}"
+      register: git_status
+      changed_when: false
+      tags:
+        - git
+        - git-status
+    - name: Pull latest changes
+      ansible.builtin.command: git pull
+      args:
+        chdir: "{{ playbook_dir }}"
+      changed_when: false
+      tags:
+        - git
+        - git-pull
+    - name: Import variable files
+      ansible.builtin.include_vars:
+        dir: vars
+        extensions:
+          - "yaml"
+      tags:
+        - always
+
+  tasks:
+    ## bash shell
+    - name: Check current (default) shell
+      ansible.builtin.shell: dscl . -read /Users/{{ ansible_env.USER }} UserShell
+      register: current_shell
+      changed_when: false
+      tags:
+        - shell
+    - name: Set default shell to Bash
+      ansible.builtin.shell: chsh -s /bin/bash
+      when: (current_shell.stdout | split(' '))[1] != "/bin/bash"
+      tags:
+        - shell
+    - name: Configure Bash shell
+      ansible.builtin.copy:
+        src: "{{ item.file }}"
+        dest: "{{ item.dest }}"
+      with_items:
+        - file: files/bash_profile
+          dest: "{{ ansible_env.HOME }}/.bash_profile"
+        - file: files/bashrc
+          dest: "{{ ansible_env.HOME }}/.bashrc"
+      tags:
+        - shell
+    - name: Configure Starship
+      ansible.builtin.copy:
+        src: files/starship.toml
+        dest: "{{ ansible_env.HOME }}/.config/starship.toml"
+      tags:
+        - shell
+
+    ## packages
+    - name: Install Homebrew taps
+      community.general.homebrew_tap:
+        name: "{{ homebrew_taps }}"
+        state: present
+      tags:
+        - homebrew
+        - homebrew-taps
+        - packages
+    - name: Install Homebrew casks
+      community.general.homebrew_cask:
+        name: "{{ homebrew_casks }}"
+        state: present
+      tags:
+        - homebrew
+        - homebrew-casks
+        - packages
+    - name: Install Homebrew packages
+      community.general.homebrew:
+        name: "{{ homebrew_packages }}"
+        state: present
+      tags:
+        - homebrew
+        - homebrew-packages
+        - packages
+    - name: Install Mac App Store applications
+      community.general.mas:
+        id: "{{ macos_applications | map(attribute='id') | list }}"
+        state: present
+      tags:
+        - mas
+        - packages
+    - name: Configure MacOS Defaults
+      community.general.osx_defaults:
+        domain: "{{ item.domain | default(omit) }}"
+        key: "{{ item.key }}"
+        type: "{{ item.type }}"
+        value: "{{ item.value }}"
+        state: present
+      notify: "{{ item.notify | default(omit) }}"
+      with_items: "{{ macos_defaults }}"
+      tags:
+        - macos
+        - defaults
+
+  post_tasks:
+    - name: Commit and push changes
+      ansible.builtin.command: "{{ item }}"
+      args:
+        chdir: "{{ playbook_dir }}"
+      with_items:
+        - "git add ."
+        - "git commit -m \"Auto push changes\""
+        - "git push"
+      tags:
+        - git
+        - git-push
+
+    ## sublime (legacy)
+    #- name: Configure Sublime Text
+    #  ansible.builtin.copy:
+    #    src: files/sublime.json
+    #    dest: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings"
+    #  tags:
+    #    - config
+    #    - sublime
+    #- name: Download Sublime Package Control
+    #  ansible.builtin.get_url:
+    #    url: "https://github.com/wbond/package_control/releases/latest/download/Package.Control.sublime-package"
+    #    dest: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text/Installed Packages/Package Control.sublime-package"
+    #  tags:
+    #    - sublime
+    #- name: Download Sublime packages (ZIP)
+    #  ansible.builtin.unarchive:
+    #    src: https://github.com/dempfi/ayu/archive/refs/tags/v6.1.2.zip
+    #    dest: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text/Packages/"
+    #    remote_src: True
+    #  tags:
+    #    - sublime
+    #- name: Rename ayu theme directory accordingly
+    #  copy:
+    #    remote_src: True
+    #    src: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text/Packages/ayu-6.1.2/"
+    #    dest: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text/Packages/ayu/"
+    #  tags:
+    #    - sublime
+
+  handlers:
+    - name: Kill Dock
+      shell: killall "Dock" > /dev/null 2>&1
+    - name: Kill Finder
+      shell: killall "Finder" > /dev/null 2>&1

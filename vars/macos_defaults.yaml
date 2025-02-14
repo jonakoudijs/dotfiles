@@ -1,0 +1,92 @@
+---
+macos_defaults:
+  ## Menu Bar
+  - description: "Control Centre Modules > Sound > Always Show in Menu Bar"
+    domain: com.apple.controlcenter
+    key: "NSStatusItem Visible Sound"
+    type: bool
+    value: true
+  - description: "Hide Spotlight in menu Bar"
+    domain: com.apple.Spotlight
+    key: MenuItemHidden
+    type: int
+    value: 1
+
+  ## Dock
+  - description: "Dock > Size"
+    domain: com.apple.dock
+    key: tilesize
+    type: float
+    value: 50
+    notify: "Kill Dock"
+  - description: Automatically hide and show the Dock
+    domain: com.apple.dock
+    key: autohide
+    type: bool
+    value: true
+    notify: "Kill Dock"
+  - description: Automatically hide and show the Dock (duration)
+    domain: com.apple.dock
+    key: autohide-time-modifier
+    type: float
+    value: 0.4
+    notify: "Kill Dock"
+  - description: Automatically hide and show the Dock (delay)
+    domain: com.apple.dock
+    key: autohide-delay
+    type: float
+    value: 0
+    notify: "Kill Dock"
+  - description: Don't show recent applications in Dock
+    domain: com.apple.dock
+    key: show-recents
+    type: bool
+    value: false
+    notify: "Kill Dock"
+
+  ## Finder
+  - description: Prefer tabs when opening documents
+    key: AppleWindowTabbingMode
+    type: string
+    value: always
+    notify: "Kill Finder"
+  - description: Default view
+    domain: com.apple.finder
+    key: FXPreferredViewStyle
+    type: string
+    value: "clmv"
+    notify: "Kill Finder"
+
+  ## Keyboard
+  - description: Key repeat rate
+    key: KeyRepeat
+    type: int
+    value: 2
+  - description: Delay until repeat
+    key: InitialKeyRepeat
+    type: int
+    value: 10
+  - description: Don't correct spelling automatically
+    key: NSAutomaticSpellingCorrectionEnabled
+    type: bool
+    value: false
+  - description: Don't capitalise words automatically
+    key: NSAutomaticCapitalizationEnabled
+    type: bool
+    value: false
+  - description: Don't add full stop with double-space
+    key: NSAutomaticPeriodSubstitutionEnabled
+    type: bool
+    value: false
+
+  ## Other
+  - description: Never start Screen Saver when inactive
+    domain: com.apple.screensaver
+    key: idleTime
+    type: int
+    value: 0
+  - Description: Remove margins around tiled Windows
+    domain: com.apple.WindowManager
+    key: EnableTiledWindowMargins
+    type: int
+    value: 0
