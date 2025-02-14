@@ -5,7 +5,6 @@ homebrew_packages:
   - bash
   - bash-completion
   - bash-completion@2
-  - chezmoi
   - cloudflared
   - cookiecutter
   - copier
