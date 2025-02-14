@@ -56,6 +56,12 @@ macos_defaults:
     type: string
     value: "clmv"
     notify: "Kill Finder"
+  - description: Screenshot save location
+    domain: com.apple.screencapture
+    key: location
+    type: string
+    value: "~/Downloads"
+
 
   ## Keyboard
   - description: Key repeat rate

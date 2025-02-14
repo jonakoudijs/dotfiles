@@ -105,6 +105,18 @@
       tags:
         - macos
         - defaults
+    
+    ## vscodium
+    - name: Install VSCodium extensions
+      ansible.builtin.command: "codium --install-extension {{ item }}"
+      with_items:
+        - teabyii.ayu
+        - kcl.kcl-vscode-extension
+      tags:
+        - vscode
+        - vscode-extensions
+        - vscodium
+        - vscodium-extensions
 
   post_tasks:
     - name: Commit and push changes
