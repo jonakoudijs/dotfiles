@@ -63,7 +63,7 @@ macos_defaults:
     value: "~/Downloads"
 
 
-  ## Keyboard
+  ## Keyboard / Mouse
   - description: Key repeat rate
     key: KeyRepeat
     type: int
@@ -84,6 +84,10 @@ macos_defaults:
     key: NSAutomaticPeriodSubstitutionEnabled
     type: bool
     value: false
+  - description: Disable natural scrolling behaviour
+    key: com.apple.swipescrolldirection
+    type: bool
+    value: false
 
   ## Other
   - description: Never start Screen Saver when inactive
@@ -96,3 +100,5 @@ macos_defaults:
     key: EnableTiledWindowMargins
     type: int
     value: 0
+  - description: Disable natural scrolling behaviour
+    domain: com.apple.swipescrolldirection

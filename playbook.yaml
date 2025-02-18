@@ -93,6 +93,8 @@
       tags:
         - mas
         - packages
+    
+    ## system
     - name: Configure MacOS Defaults
       community.general.osx_defaults:
         domain: "{{ item.domain | default(omit) }}"
