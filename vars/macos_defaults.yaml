@@ -102,3 +102,5 @@ macos_defaults:
     value: 0
   - description: Disable natural scrolling behaviour
     domain: com.apple.swipescrolldirection
+    type: bool
+    value: false
