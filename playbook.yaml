@@ -98,7 +98,7 @@
     - name: Configure MacOS Defaults
       community.general.osx_defaults:
         domain: "{{ item.domain | default(omit) }}"
-        key: "{{ item.key }}"
+        key: "{{ item.key | default(omit) }}"
         type: "{{ item.type }}"
         value: "{{ item.value }}"
         state: present
