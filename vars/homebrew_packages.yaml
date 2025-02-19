@@ -3,7 +3,6 @@ homebrew_packages:
   - ansible
   - argocd
   - bash
-  - bash-completion
   - bash-completion@2
   - cloudflared
   - cookiecutter
@@ -25,6 +24,7 @@ homebrew_packages:
   - kubernetes-cli
   - kubeseal
   - lazygit
+  - mas
   - minikube
   - mysql-client
   - nmap
