@@ -18,4 +18,4 @@ alias setup="ANSIBLE_LOCALHOST_WARNING="false" ANSIBLE_INVENTORY_UNPARSED_WARNIN
 alias k="kubectl"
 alias kc="kubectx"
 alias kn="kubens"
-alias c="chezmoi"
+alias c="codium"
