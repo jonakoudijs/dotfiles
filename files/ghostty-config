@@ -15,6 +15,7 @@ font-family = "FiraCode Nerd Font Mono"
 font-thicken = true
 font-thicken-strength = 255
 
+
 ## -- Behaviour
 
 # Disables confirmation that a surface should be closed before closing it
