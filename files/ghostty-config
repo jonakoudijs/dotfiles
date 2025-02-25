@@ -15,6 +15,8 @@ font-family = "FiraCode Nerd Font Mono"
 font-thicken = true
 font-thicken-strength = 255
 
+# Set blank window title
+title = ""
 
 ## -- Behaviour
 
