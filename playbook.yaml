@@ -65,6 +65,7 @@
         src: files/ghostty-config
         dest: "{{ ansible_env.HOME }}/.config/ghostty/config"
       tags:
+        - ghostty
         - shell
 
     ## packages

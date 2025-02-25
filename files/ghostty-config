@@ -16,7 +16,7 @@ font-thicken = true
 font-thicken-strength = 255
 
 # Set blank window title
-title = ""
+title = " "
 
 ## -- Behaviour
 
