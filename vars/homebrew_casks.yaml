@@ -1,7 +1,7 @@
 ---
 homebrew_casks:
   - discord
-  - font-fira-code-nerd-font
-  - iterm2
+  - font-fira-code-nerd-font\
+  - ghostty
   - slack
   - vscodium

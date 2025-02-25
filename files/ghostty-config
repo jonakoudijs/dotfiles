@@ -1,0 +1,24 @@
+# Run `ghostty +show-config --default --docs` to view a list of
+# all available config options and their default values.
+
+
+## -- Visual
+
+# Change app icon
+macos-icon = paper
+
+# Change terminal theme
+theme = "Ayu Mirage"
+
+# Change terminal font
+font-family = "FiraCode Nerd Font Mono"
+font-thicken = true
+font-thicken-strength = 255
+
+## -- Behaviour
+
+# Disables confirmation that a surface should be closed before closing it
+confirm-close-surface = false
+
+# Quit after the last surface is closed
+quit-after-last-window-closed = true

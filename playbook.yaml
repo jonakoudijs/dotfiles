@@ -60,6 +60,12 @@
         dest: "{{ ansible_env.HOME }}/.config/starship.toml"
       tags:
         - shell
+    - name: Configure Ghostty
+      ansible.builtin.copy:
+        src: files/ghostty-config
+        dest: "{{ ansible_env.HOME }}/.config/ghostty/config"
+      tags:
+        - shell
 
     ## packages
     - name: Install Homebrew taps
@@ -133,34 +139,6 @@
         - git
         - git-push
 
-    ## sublime (legacy)
-    #- name: Configure Sublime Text
-    #  ansible.builtin.copy:
-    #    src: files/sublime.json
-    #    dest: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text/Packages/User/Preferences.sublime-settings"
-    #  tags:
-    #    - config
-    #    - sublime
-    #- name: Download Sublime Package Control
-    #  ansible.builtin.get_url:
-    #    url: "https://github.com/wbond/package_control/releases/latest/download/Package.Control.sublime-package"
-    #    dest: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text/Installed Packages/Package Control.sublime-package"
-    #  tags:
-    #    - sublime
-    #- name: Download Sublime packages (ZIP)
-    #  ansible.builtin.unarchive:
-    #    src: https://github.com/dempfi/ayu/archive/refs/tags/v6.1.2.zip
-    #    dest: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text/Packages/"
-    #    remote_src: True
-    #  tags:
-    #    - sublime
-    #- name: Rename ayu theme directory accordingly
-    #  copy:
-    #    remote_src: True
-    #    src: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text/Packages/ayu-6.1.2/"
-    #    dest: "{{ ansible_env.HOME }}/Library/Application Support/Sublime Text/Packages/ayu/"
-    #  tags:
-    #    - sublime
 
   handlers:
     - name: Kill Dock
