@@ -1,6 +1,6 @@
 ---
 homebrew_casks:
-  #- discord
+  - discord
   - font-fira-code-nerd-font
   - ghostty
   - slack
