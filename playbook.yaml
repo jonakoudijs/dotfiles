@@ -60,6 +60,11 @@
         dest: "{{ ansible_env.HOME }}/.config/starship.toml"
       tags:
         - shell
+
+    - name: Create Ghostty config diretory
+      ansible.builtin.file:
+        path: "{{ ansible_env.HOME }}/.config/ghostty"
+        state:
     - name: Configure Ghostty
       ansible.builtin.copy:
         src: files/ghostty-config
