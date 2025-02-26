@@ -64,7 +64,7 @@
     - name: Create Ghostty config diretory
       ansible.builtin.file:
         path: "{{ ansible_env.HOME }}/.config/ghostty"
-        state:
+        state: directory
     - name: Configure Ghostty
       ansible.builtin.copy:
         src: files/ghostty-config
