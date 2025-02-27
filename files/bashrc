@@ -8,6 +8,9 @@ fi
 eval "$(starship init bash)"
 eval "$(fzf --bash)"
 
+## paths
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+
 ## settings
 export LANG=en_US.UTF-8
 export AWS_CA_BUNDLE=$HOME/.aws/rootca.crt
