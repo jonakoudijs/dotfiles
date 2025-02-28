@@ -30,4 +30,4 @@ quit-after-last-window-closed = true
 auto-update = off
 
 # Disable clipboard paste warning
-clipboard-paste-protection
+clipboard-paste-protection = false
