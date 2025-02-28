@@ -28,3 +28,6 @@ quit-after-last-window-closed = true
 
 # Disable auto update (updated via Homebrew)
 auto-update = off
+
+# Disable clipboard paste warning
+clipboard-paste-protection
