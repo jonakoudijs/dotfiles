@@ -8,3 +8,4 @@ disabled = true
 
 [kubernetes]
 disabled = false
+format = '[$symbol$context]($style) in '
