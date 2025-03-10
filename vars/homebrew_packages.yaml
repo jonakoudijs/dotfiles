@@ -28,7 +28,6 @@ homebrew_packages:
   - minikube
   - mysql-client
   - nmap
-  - notion
   - nushell
   - orbstack
   - popeye
