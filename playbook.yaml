@@ -105,6 +105,14 @@
       tags:
         - mas
         - packages
+    - name: Configure git client
+      community.general.git_config:
+        name: "{{ item.name }}"
+        value: "{{ item.value }}"
+        scope: "{{ item.scope | default('global') }}"
+      with_items: "{{ git_config }}"
+      tags:
+        - git
     
     ## system
     - name: Configure MacOS Defaults
