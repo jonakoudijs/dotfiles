@@ -2,3 +2,5 @@
 git_config:
   - name: pull.rebase
     value: "true"
+  - name: advice.skippedCherryPicks
+    value: "false"
