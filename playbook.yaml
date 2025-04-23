@@ -73,6 +73,23 @@
         - ghostty
         - shell
 
+    - name: Create Helix config directory
+      ansible.builtin.file:
+        path: "{{ ansible_env.HOME }}/.config/helix"
+        state: directory
+    - name: Configure Helix
+      ansible.builtin.copy:
+        src: "{{ item.src }}"
+        dest: "{{ item.dest }}"
+      with_items:
+        - src: files/helix-config
+          dest: "{{ ansible_env.HOME }}/.config/ghostty/config.toml"
+        - src: files/helix-languages
+          dest: "{{ ansible_env.HOME }}/.config/ghostty/languages.toml"
+      tags:
+        - ghostty
+        - shell
+
     - name: Configure k9s
       ansible.builtin.copy:
         src: "{{ item.src }}"
