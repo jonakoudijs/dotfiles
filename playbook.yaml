@@ -73,22 +73,15 @@
         - ghostty
         - shell
 
-    - name: Create k9s config directories
-      ansible.builtin.file:
-        path: "{{ item }}"
-        state: directory
-      with_items:
-        - "{{ ansible_env.HOME }}/.config/k9s"
-        - "{{ ansible_env.HOME }}/.config/k9s/skins"
-    - name: Configure Ghostty
+    - name: Configure k9s
       ansible.builtin.copy:
         src: "{{ item.src }}"
         dest: "{{ item.dest }}"
       with_items:
         - src: files/k9s-config
-          dest: "{{ ansible_env.HOME }}/.config/k9s/config.yaml"
+          dest: "{{ ansible_env.HOME }}/Library/Application Support/k9s/config.yaml"
         - src: files/k9s-skin
-          dest: "{{ ansible_env.HOME }}/.config/k9s/skins/jona_default.yaml"
+          dest: "{{ ansible_env.HOME }}/Library/Application Support/k9s/skins/jona_default.yaml"
       tags:
         - k9s
         - shell
