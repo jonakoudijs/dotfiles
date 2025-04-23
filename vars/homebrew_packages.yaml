@@ -4,6 +4,7 @@ homebrew_packages:
   - argocd
   - bash
   - bash-completion@2
+  - bash-language-server
   - cloudflared
   - cookiecutter
   - copier
@@ -14,9 +15,9 @@ homebrew_packages:
   - git
   - go-task
   - hadolint
+  - helix
   - helm
   - helmfile
-  - iterm2
   - jq
   - kind
   - krew
@@ -54,3 +55,4 @@ homebrew_packages:
   - webp
   - wget
   - xz
+  - yaml-language-server
