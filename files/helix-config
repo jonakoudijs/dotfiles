@@ -24,5 +24,8 @@ insert = "bar"
 normal = "block"
 select = "underline"
 
+[editor.file-picker]
+hidden = false
+
 [editor.statusline]
 left = ["mode", "spinner", "version-control", "file-name"]
