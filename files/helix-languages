@@ -6,3 +6,11 @@ language-servers = ["yaml-language-server"]
 [language-server.yaml-language-server]
 command = "yaml-language-server"
 config = { yaml = { schemas = { kubernetes = "/*.yaml" }, format = { enable = true } } }
+
+[[language]]
+name = "kcl"
+file-types = ["kcl", "k"]
+language-servers = ["kcl-language-server"]
+
+[language-server.kcl-language-server]
+command = "kcl-language-server"

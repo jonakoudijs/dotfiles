@@ -19,6 +19,7 @@ homebrew_packages:
   - helm
   - helmfile
   - jq
+  - kcl-lang/tap/kcl-lsp
   - kind
   - krew
   - kubectx
