@@ -9,6 +9,7 @@ config = { yaml = { schemas = { kubernetes = "/*.yaml" }, format = { enable = tr
 
 [[language]]
 name = "kcl"
+scope = "source.kcl"
 file-types = ["kcl", "k"]
 language-servers = ["kcl-language-server"]
 
