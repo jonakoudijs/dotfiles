@@ -83,11 +83,11 @@
         dest: "{{ item.dest }}"
       with_items:
         - src: files/helix-config
-          dest: "{{ ansible_env.HOME }}/.config/ghostty/config.toml"
+          dest: "{{ ansible_env.HOME }}/.config/helix/config.toml"
         - src: files/helix-languages
-          dest: "{{ ansible_env.HOME }}/.config/ghostty/languages.toml"
+          dest: "{{ ansible_env.HOME }}/.config/helix/languages.toml"
       tags:
-        - ghostty
+        - helix
         - shell
 
     - name: Configure k9s
