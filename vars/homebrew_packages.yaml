@@ -26,6 +26,7 @@ homebrew_packages:
   - kubernetes-cli
   - kubeseal
   - lazygit
+  - marksman
   - mas
   - minikube
   - mysql-client
