@@ -2,6 +2,18 @@
 # all available config options and their default values.
 
 
+## -- Shell
+
+# Specify shell
+command = /opt/homebrew/bin/bash
+
+# Specify bash integration
+shell-integration = bash
+
+# Inherit working directory for tabs and windows
+window-inherit-working-directory = true
+
+
 ## -- Visual
 
 # Change app icon
