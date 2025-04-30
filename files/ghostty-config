@@ -4,10 +4,8 @@
 
 ## -- Shell
 
-# Specify shell
-command = /opt/homebrew/bin/bash
-
 # Specify bash integration
+command = /opt/homebrew/bin/bash
 shell-integration = bash
 
 # Inherit working directory for tabs and windows
