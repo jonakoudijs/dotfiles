@@ -11,6 +11,11 @@ macos_defaults:
     key: MenuItemHidden
     type: int
     value: 1
+  - description: "Hide Spotlight in menu Bar"
+    domain: com.apple.Spotlight
+    key: MenuItemHidden
+    type: int
+    value: 1
 
   ## Dock
   - description: "Dock > Size"
@@ -62,7 +67,6 @@ macos_defaults:
     type: string
     value: "~/Downloads"
 
-
   ## Keyboard / Mouse
   - description: Key repeat rate
     key: KeyRepeat
@@ -90,6 +94,15 @@ macos_defaults:
     value: false
 
   ## Other
+  - description: Disable Handoff
+    domain: com.apple.coreservices.useractivityd
+    key: ActivityAdvertisingAllowed
+    type: bool
+    value: false
+  - description: Change macOS languange for user to English
+    key: AppleLanguages
+    type: string
+    value: "en-US"
   - description: Never start Screen Saver when inactive
     domain: com.apple.screensaver
     key: idleTime
