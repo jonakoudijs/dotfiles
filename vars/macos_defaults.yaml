@@ -101,8 +101,9 @@ macos_defaults:
     value: false
   - description: Change macOS languange for user to English
     key: AppleLanguages
-    type: string
-    value: "en-US"
+    type: list
+    value:
+      - "en-US"
   - description: Never start Screen Saver when inactive
     domain: com.apple.screensaver
     key: idleTime
