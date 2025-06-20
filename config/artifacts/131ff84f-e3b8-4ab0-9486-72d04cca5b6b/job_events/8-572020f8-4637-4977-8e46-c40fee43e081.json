@@ -1,1 +1,0 @@
-{"event": "verbose", "uuid": "572020f8-4637-4977-8e46-c40fee43e081", "counter": 8, "stdout": "\u001b[1;35mModuleNotFoundError\u001b[0m: \u001b[35mNo module named 'ansible.module_utils.six.moves'\u001b[0m", "start_line": 7, "end_line": 8, "runner_ident": "131ff84f-e3b8-4ab0-9486-72d04cca5b6b", "created": "2025-06-20T08:40:46.351721+00:00"}

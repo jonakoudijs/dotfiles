@@ -1,1 +1,0 @@
-{"event": "verbose", "uuid": "d158dbd5-97e0-45e6-a264-7324b69087d9", "counter": 12, "stdout": "\u001b[0;31m    - name: Install Homebrew taps\u001b[0m", "start_line": 11, "end_line": 12, "runner_ident": "2eb32421-30af-4e8d-957f-f93f93ba1d97", "created": "2025-06-20T08:34:22.282488+00:00"}

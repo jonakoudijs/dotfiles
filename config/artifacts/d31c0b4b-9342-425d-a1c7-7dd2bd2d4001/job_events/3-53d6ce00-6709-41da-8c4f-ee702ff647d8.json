@@ -1,1 +1,0 @@
-{"event": "verbose", "uuid": "53d6ce00-6709-41da-8c4f-ee702ff647d8", "counter": 3, "stdout": "    import ansible.constants as C", "start_line": 2, "end_line": 3, "runner_ident": "d31c0b4b-9342-425d-a1c7-7dd2bd2d4001", "created": "2025-06-20T08:43:09.327647+00:00"}

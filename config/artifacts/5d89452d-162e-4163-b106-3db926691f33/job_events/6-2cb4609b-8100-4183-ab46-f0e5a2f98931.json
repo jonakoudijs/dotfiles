@@ -1,1 +1,0 @@
-{"event": "verbose", "uuid": "2cb4609b-8100-4183-ab46-f0e5a2f98931", "counter": 6, "stdout": "\u001b[0;31mThe error appears to be in '/Users/jona/Projects/personal/dotfiles/config/playbook.yaml': line 107, column 7, but may\u001b[0m", "start_line": 5, "end_line": 6, "runner_ident": "5d89452d-162e-4163-b106-3db926691f33", "created": "2025-06-20T08:27:58.985365+00:00"}
