@@ -1,5 +1,7 @@
 ---
 macos_applications:
+  - name: "Reeder Classic."
+    id: 1529448980
   - name: "Theine"
     id: 955848755
   - name: "Notion Web Clipper"
