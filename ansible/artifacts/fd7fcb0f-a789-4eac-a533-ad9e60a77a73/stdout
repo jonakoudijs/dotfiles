@@ -1,0 +1,93 @@
+[1;35m[WARNING]: No inventory was parsed, only implicit localhost is available[0m
+[1;35m[WARNING]: provided hosts list is empty, only localhost is available. Note that[0m
+[1;35mthe implicit localhost does not match 'all'[0m
+
+PLAY [Deploy MacOS Development Environment] ************************************
+
+TASK [Gathering Facts] *********************************************************
+[0;32mok: [localhost][0m
+
+TASK [Check git status] ********************************************************
+[0;32mok: [localhost][0m
+
+TASK [Pull latest changes] *****************************************************
+[0;31mfatal: [localhost]: FAILED! => {"changed": false, "cmd": ["git", "pull"], "delta": "0:00:00.005439", "end": "2025-06-20 14:21:45.950336", "msg": "non-zero return code", "rc": 128, "start": "2025-06-20 14:21:45.944897", "stderr": "error: cannot pull with rebase: You have unstaged changes.\nerror: Please commit or stash them.", "stderr_lines": ["error: cannot pull with rebase: You have unstaged changes.", "error: Please commit or stash them."], "stdout": "", "stdout_lines": []}[0m
+[0;36m...ignoring[0m
+
+TASK [Import variable files] ***************************************************
+[0;32mok: [localhost][0m
+
+TASK [Check current (default) shell] *******************************************
+[0;32mok: [localhost][0m
+
+TASK [Set default shell to Bash] ***********************************************
+[0;36mskipping: [localhost][0m
+
+TASK [Configure Bash shell] ****************************************************
+[0;32mok: [localhost] => (item={'file': 'files/bash_profile', 'dest': '/Users/jona/.bash_profile'})[0m
+[0;32mok: [localhost] => (item={'file': 'files/bashrc', 'dest': '/Users/jona/.bashrc'})[0m
+
+TASK [Configure Starship] ******************************************************
+[0;32mok: [localhost][0m
+
+TASK [Create Ghostty config directory] *****************************************
+[0;32mok: [localhost][0m
+
+TASK [Configure Ghostty] *******************************************************
+[0;32mok: [localhost][0m
+
+TASK [Create Helix config directory] *******************************************
+[0;32mok: [localhost][0m
+
+TASK [Configure Helix] *********************************************************
+[0;32mok: [localhost] => (item={'src': 'files/helix-config', 'dest': '/Users/jona/.config/helix/config.toml'})[0m
+[0;32mok: [localhost] => (item={'src': 'files/helix-languages', 'dest': '/Users/jona/.config/helix/languages.toml'})[0m
+
+TASK [Configure k9s] ***********************************************************
+[0;32mok: [localhost] => (item={'src': 'files/k9s-config', 'dest': '/Users/jona/Library/Application Support/k9s/config.yaml'})[0m
+[0;32mok: [localhost] => (item={'src': 'files/k9s-skin', 'dest': '/Users/jona/Library/Application Support/k9s/skins/jona_default.yaml'})[0m
+
+TASK [Install Homebrew taps] ***************************************************
+[0;32mok: [localhost][0m
+
+TASK [Install Homebrew casks] **************************************************
+[0;32mok: [localhost][0m
+
+TASK [Install Homebrew packages] ***********************************************
+[0;32mok: [localhost][0m
+
+TASK [Install Mac App Store applications] **************************************
+[0;32mok: [localhost][0m
+
+TASK [Configure git client] ****************************************************
+[0;32mok: [localhost] => (item={'name': 'pull.rebase', 'value': 'true'})[0m
+[0;32mok: [localhost] => (item={'name': 'advice.skippedCherryPicks', 'value': 'false'})[0m
+
+TASK [Configure MacOS Defaults] ************************************************
+[0;32mok: [localhost] => (item={'description': 'Control Centre Modules > Sound > Always Show in Menu Bar', 'domain': 'com.apple.controlcenter', 'key': 'NSStatusItem Visible Sound', 'type': 'bool', 'value': True})[0m
+[0;32mok: [localhost] => (item={'description': 'Hide Spotlight in menu Bar', 'domain': 'com.apple.Spotlight', 'key': 'MenuItemHidden', 'type': 'int', 'value': 1})[0m
+[0;32mok: [localhost] => (item={'description': 'Hide Spotlight in menu Bar', 'domain': 'com.apple.Spotlight', 'key': 'MenuItemHidden', 'type': 'int', 'value': 1})[0m
+[0;32mok: [localhost] => (item={'description': 'Dock > Size', 'domain': 'com.apple.dock', 'key': 'tilesize', 'type': 'float', 'value': 50, 'notify': 'Kill Dock'})[0m
+[0;32mok: [localhost] => (item={'description': 'Automatically hide and show the Dock', 'domain': 'com.apple.dock', 'key': 'autohide', 'type': 'bool', 'value': True, 'notify': 'Kill Dock'})[0m
+[0;32mok: [localhost] => (item={'description': 'Automatically hide and show the Dock (duration)', 'domain': 'com.apple.dock', 'key': 'autohide-time-modifier', 'type': 'float', 'value': 0.4, 'notify': 'Kill Dock'})[0m
+[0;32mok: [localhost] => (item={'description': 'Automatically hide and show the Dock (delay)', 'domain': 'com.apple.dock', 'key': 'autohide-delay', 'type': 'float', 'value': 0, 'notify': 'Kill Dock'})[0m
+[0;32mok: [localhost] => (item={'description': "Don't show recent applications in Dock", 'domain': 'com.apple.dock', 'key': 'show-recents', 'type': 'bool', 'value': False, 'notify': 'Kill Dock'})[0m
+[0;32mok: [localhost] => (item={'description': 'Prefer tabs when opening documents', 'key': 'AppleWindowTabbingMode', 'type': 'string', 'value': 'always', 'notify': 'Kill Finder'})[0m
+[0;32mok: [localhost] => (item={'description': 'Default view', 'domain': 'com.apple.finder', 'key': 'FXPreferredViewStyle', 'type': 'string', 'value': 'clmv', 'notify': 'Kill Finder'})[0m
+[0;32mok: [localhost] => (item={'description': 'Screenshot save location', 'domain': 'com.apple.screencapture', 'key': 'location', 'type': 'string', 'value': '~/Downloads'})[0m
+[0;32mok: [localhost] => (item={'description': 'Key repeat rate', 'key': 'KeyRepeat', 'type': 'int', 'value': 2})[0m
+[0;32mok: [localhost] => (item={'description': 'Delay until repeat', 'key': 'InitialKeyRepeat', 'type': 'int', 'value': 10})[0m
+[0;32mok: [localhost] => (item={'description': "Don't correct spelling automatically", 'key': 'NSAutomaticSpellingCorrectionEnabled', 'type': 'bool', 'value': False})[0m
+[0;32mok: [localhost] => (item={'description': "Don't capitalise words automatically", 'key': 'NSAutomaticCapitalizationEnabled', 'type': 'bool', 'value': False})[0m
+[0;32mok: [localhost] => (item={'description': "Don't add full stop with double-space", 'key': 'NSAutomaticPeriodSubstitutionEnabled', 'type': 'bool', 'value': False})[0m
+[0;32mok: [localhost] => (item={'description': 'Disable natural scrolling behaviour', 'key': 'com.apple.swipescrolldirection', 'type': 'bool', 'value': False})[0m
+[0;32mok: [localhost] => (item={'description': 'Disable Handoff', 'domain': 'com.apple.coreservices.useractivityd', 'key': 'ActivityAdvertisingAllowed', 'type': 'bool', 'value': False})[0m
+[0;32mok: [localhost] => (item={'description': 'Never start Screen Saver when inactive', 'domain': 'com.apple.screensaver', 'key': 'idleTime', 'type': 'int', 'value': 0})[0m
+[0;32mok: [localhost] => (item={'Description': 'Remove margins around tiled Windows', 'domain': 'com.apple.WindowManager', 'key': 'EnableTiledWindowMargins', 'type': 'int', 'value': 0})[0m
+[0;32mok: [localhost] => (item={'description': 'Disable natural scrolling behaviour', 'key': 'com.apple.swipescrolldirection', 'type': 'bool', 'value': False})[0m
+
+TASK [Install VSCodium extensions] *********************************************
+[0;32mok: [localhost] => (item=teabyii.ayu)[0m
+[0;32mok: [localhost] => (item=kcl.kcl-vscode-extension)[0m
+
+TASK [Commit and push changes] *************************************************

@@ -1,0 +1,53 @@
+[1;35m[WARNING]: No inventory was parsed, only implicit localhost is available[0m
+[1;35m[WARNING]: provided hosts list is empty, only localhost is available. Note that[0m
+[1;35mthe implicit localhost does not match 'all'[0m
+
+PLAY [Setup MacOS Development Environment] *************************************
+
+TASK [Gathering Facts] *********************************************************
+[0;32mok: [localhost][0m
+
+TASK [Check git status] ********************************************************
+[0;32mok: [localhost][0m
+
+TASK [Pull latest changes] *****************************************************
+[0;31mfatal: [localhost]: FAILED! => {"changed": false, "cmd": ["git", "pull"], "delta": "0:00:00.005303", "end": "2025-06-20 13:42:22.124836", "msg": "non-zero return code", "rc": 128, "start": "2025-06-20 13:42:22.119533", "stderr": "error: cannot pull with rebase: You have unstaged changes.\nerror: Please commit or stash them.", "stderr_lines": ["error: cannot pull with rebase: You have unstaged changes.", "error: Please commit or stash them."], "stdout": "", "stdout_lines": []}[0m
+[0;36m...ignoring[0m
+
+TASK [Import variable files] ***************************************************
+[0;32mok: [localhost][0m
+
+TASK [Check current (default) shell] *******************************************
+[0;32mok: [localhost][0m
+
+TASK [Set default shell to Bash] ***********************************************
+[0;36mskipping: [localhost][0m
+
+TASK [Configure Bash shell] ****************************************************
+[0;32mok: [localhost] => (item={'file': 'files/bash_profile', 'dest': '/Users/jona/.bash_profile'})[0m
+[0;32mok: [localhost] => (item={'file': 'files/bashrc', 'dest': '/Users/jona/.bashrc'})[0m
+
+TASK [Configure Starship] ******************************************************
+[0;32mok: [localhost][0m
+
+TASK [Create Ghostty config directory] *****************************************
+[0;32mok: [localhost][0m
+
+TASK [Configure Ghostty] *******************************************************
+[0;32mok: [localhost][0m
+
+TASK [Create Helix config directory] *******************************************
+[0;32mok: [localhost][0m
+
+TASK [Configure Helix] *********************************************************
+[0;32mok: [localhost] => (item={'src': 'files/helix-config', 'dest': '/Users/jona/.config/helix/config.toml'})[0m
+[0;32mok: [localhost] => (item={'src': 'files/helix-languages', 'dest': '/Users/jona/.config/helix/languages.toml'})[0m
+
+TASK [Configure k9s] ***********************************************************
+[0;32mok: [localhost] => (item={'src': 'files/k9s-config', 'dest': '/Users/jona/Library/Application Support/k9s/config.yaml'})[0m
+[0;32mok: [localhost] => (item={'src': 'files/k9s-skin', 'dest': '/Users/jona/Library/Application Support/k9s/skins/jona_default.yaml'})[0m
+
+TASK [Install Homebrew taps] ***************************************************
+[0;32mok: [localhost][0m
+
+TASK [Install Homebrew casks] **************************************************

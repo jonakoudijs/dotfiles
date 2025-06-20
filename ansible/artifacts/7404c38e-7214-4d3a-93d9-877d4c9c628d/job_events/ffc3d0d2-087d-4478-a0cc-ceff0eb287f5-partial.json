@@ -1,0 +1,1 @@
+{"event": "playbook_on_start", "pid": 49641, "uuid": "ffc3d0d2-087d-4478-a0cc-ceff0eb287f5", "created": "2025-06-20T11:14:11.661304+00:00", "event_data": {"playbook": "playbook.yaml", "playbook_uuid": "ffc3d0d2-087d-4478-a0cc-ceff0eb287f5", "uuid": "ffc3d0d2-087d-4478-a0cc-ceff0eb287f5"}}
