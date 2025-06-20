@@ -5,23 +5,6 @@
   ignore_errors: true
 
   pre_tasks:
-    - name: Check git status
-      ansible.builtin.command: git status --porcelain
-      args:
-        chdir: "{{ playbook_dir }}"
-      register: git_status
-      changed_when: false
-      tags:
-        - git
-        - git-status
-    - name: Pull latest changes
-      ansible.builtin.command: git pull
-      args:
-        chdir: "{{ playbook_dir }}"
-      changed_when: false
-      tags:
-        - git
-        - git-pull
     - name: Import variable files
       ansible.builtin.include_vars:
         dir: vars
@@ -168,20 +151,6 @@
         - vscode-extensions
         - vscodium
         - vscodium-extensions
-
-  post_tasks:
-    - name: Commit and push changes
-      ansible.builtin.command: "{{ item }}"
-      args:
-        chdir: "{{ playbook_dir }}"
-      with_items:
-        - "git add ."
-        - "git commit -m \"Auto push changes\""
-        - "git push"
-      when: git_status.stdout_lines | length > 0
-      tags:
-        - git
-        - git-push
 
 
   handlers:

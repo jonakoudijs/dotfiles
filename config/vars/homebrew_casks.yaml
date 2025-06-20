@@ -1,8 +1,0 @@
----
-homebrew_casks:
-  - balenaetcher
-  - discord
-  - font-fira-code-nerd-font
-  - ghostty
-  - slack
-  - vscodium
