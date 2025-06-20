@@ -11,7 +11,7 @@ TASK [Check git status] ********************************************************
 [0;32mok: [localhost][0m
 
 TASK [Pull latest changes] *****************************************************
-[0;31mfatal: [localhost]: FAILED! => {"changed": false, "cmd": ["git", "pull"], "delta": "0:00:00.005627", "end": "2025-06-20 10:45:32.217152", "msg": "non-zero return code", "rc": 128, "start": "2025-06-20 10:45:32.211525", "stderr": "error: cannot pull with rebase: You have unstaged changes.\nerror: Please commit or stash them.", "stderr_lines": ["error: cannot pull with rebase: You have unstaged changes.", "error: Please commit or stash them."], "stdout": "", "stdout_lines": []}[0m
+[0;31mfatal: [localhost]: FAILED! => {"changed": false, "cmd": ["git", "pull"], "delta": "0:00:00.005718", "end": "2025-06-20 10:48:34.406396", "msg": "non-zero return code", "rc": 128, "start": "2025-06-20 10:48:34.400678", "stderr": "error: cannot pull with rebase: You have unstaged changes.\nerror: Please commit or stash them.", "stderr_lines": ["error: cannot pull with rebase: You have unstaged changes.", "error: Please commit or stash them."], "stdout": "", "stdout_lines": []}[0m
 [0;36m...ignoring[0m
 
 TASK [Import variable files] ***************************************************
@@ -91,10 +91,3 @@ TASK [Install VSCodium extensions] *********************************************
 [0;32mok: [localhost] => (item=kcl.kcl-vscode-extension)[0m
 
 TASK [Commit and push changes] *************************************************
-[0;33mchanged: [localhost] => (item=git add .)[0m
-[0;33mchanged: [localhost] => (item=git commit -m "Auto push changes")[0m
-[0;31mfailed: [localhost] (item=git push) => {"ansible_loop_var": "item", "changed": true, "cmd": ["git", "push"], "delta": "0:00:00.004638", "end": "2025-06-20 10:45:42.706991", "item": "git push", "msg": "non-zero return code", "rc": 128, "start": "2025-06-20 10:45:42.702353", "stderr": "fatal: The current branch cli-build has no upstream branch.\nTo push the current branch and set the remote as upstream, use\n\n    git push --set-upstream origin cli-build\n\nTo have this happen automatically for branches without a tracking\nupstream, see 'push.autoSetupRemote' in 'git help config'.", "stderr_lines": ["fatal: The current branch cli-build has no upstream branch.", "To push the current branch and set the remote as upstream, use", "", "    git push --set-upstream origin cli-build", "", "To have this happen automatically for branches without a tracking", "upstream, see 'push.autoSetupRemote' in 'git help config'."], "stdout": "", "stdout_lines": []}[0m
-[0;36m...ignoring[0m
-
-PLAY RECAP *********************************************************************
-[0;33mlocalhost[0m                  : [0;32mok=20  [0m [0;33mchanged=1   [0m unreachable=0    failed=0    [0;36mskipped=1   [0m rescued=0    [1;35mignored=2   [0m
