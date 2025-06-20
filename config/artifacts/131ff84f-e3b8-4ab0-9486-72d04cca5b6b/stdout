@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File [35m"/Users/jona/Projects/personal/dotfiles/.venv/bin/ansible-playbook"[0m, line [35m62[0m, in [35m<module>[0m
+    import ansible.constants as C
+  File [35m"/Users/jona/Projects/personal/dotfiles/.venv/lib/python3.13/site-packages/ansible/constants.py"[0m, line [35m15[0m, in [35m<module>[0m
+    from ansible.config.manager import ConfigManager, ensure_type, get_ini_config_value
+  File [35m"/Users/jona/Projects/personal/dotfiles/.venv/lib/python3.13/site-packages/ansible/config/manager.py"[0m, line [35m29[0m, in [35m<module>[0m
+    from ansible.module_utils.six.moves import configparser
+[1;35mModuleNotFoundError[0m: [35mNo module named 'ansible.module_utils.six.moves'[0m

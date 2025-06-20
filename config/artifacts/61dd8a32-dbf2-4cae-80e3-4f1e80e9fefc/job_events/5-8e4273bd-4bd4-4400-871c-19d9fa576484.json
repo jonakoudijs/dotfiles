@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "8e4273bd-4bd4-4400-871c-19d9fa576484", "counter": 5, "stdout": "    from ansible.config.manager import ConfigManager, ensure_type, get_ini_config_value", "start_line": 4, "end_line": 5, "runner_ident": "61dd8a32-dbf2-4cae-80e3-4f1e80e9fefc", "created": "2025-06-20T08:38:55.457809+00:00"}

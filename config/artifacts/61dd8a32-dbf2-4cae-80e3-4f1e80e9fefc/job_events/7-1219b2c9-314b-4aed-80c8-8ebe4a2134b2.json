@@ -1,0 +1,1 @@
+{"event": "verbose", "uuid": "1219b2c9-314b-4aed-80c8-8ebe4a2134b2", "counter": 7, "stdout": "    from ansible.module_utils.six.moves import configparser", "start_line": 6, "end_line": 7, "runner_ident": "61dd8a32-dbf2-4cae-80e3-4f1e80e9fefc", "created": "2025-06-20T08:38:55.458045+00:00"}
