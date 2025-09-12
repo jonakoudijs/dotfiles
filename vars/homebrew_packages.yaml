@@ -50,8 +50,6 @@ homebrew_packages:
   - sublime-text
   - talosctl
   - telnet
-  - terraform
-  - terraform-ls
   - tflint
   - tree
   - wakeonlan
