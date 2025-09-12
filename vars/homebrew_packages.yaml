@@ -32,6 +32,7 @@ homebrew_packages:
   - mysql-client
   - nmap
   - nushell
+  - opentofu
   - orbstack
   - popeye
   - python
